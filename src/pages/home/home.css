@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.first_section {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product_div {
+    width: 250px;
+    height: 330px;
+    border: 1px solid #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image_card {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    align-items: start;
+}
+
+.image_card img {
+    object-fit: cover;
+    object-position: center;
+    width: 220px;
+}
+
+.product_list_card {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product_img {
+    position: relative;
+
+}
+
+.product_img img {
+    object-fit: cover;
+    object-position: center;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.product_img img:hover {
+  width: 210px;
+}
+
+.product_list_section {
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product_list_side {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 20px;
+}
+
+.add_product {
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.product_name__add {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 80%;
+    gap: 5px;
+
+}
+
+.product__name {
+    font-family: "Oswald", sans-serif;
+    color: #323232;
+}
+
+.product__specs {
+  color: #323232;
+  font-size: 12px;
+}
+
+.product__details {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.product__details button {
+  width: 80%;
+  padding: 10px 0;
+  border-radius: 25px;
+  border: none;
+  background-color: #40556d;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product_price {
+    color: #323232;
+    font-weight: 600;
+    width: 180px;
+}
+
+.filter_side {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    height: 150vh;
+}
+
+.price-slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: fit-content;
+  font-family: sans-serif;
+}
+
+.slider {
+  position: relative;
+  height: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: end;
+}
+
+
+.slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  -webkit-appearance: none;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  background: #40546d;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+  z-index: 3;
+  
+}
+
+.slider-range {
+  position: absolute;
+  height: 4px;
+  background-color: #222220;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.price-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.price-inputs div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.price-inputs input {
+  width: 100px;
+  padding: 6px;
+  text-align: center;
+  border: 2px solid #40556d;  
+  border-radius: 6px;
+}
+
+.internal_memory h3, .ram h3, .screen_size h3, .update_frequency h3 {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+.memory_filter, .ram_filter, .screen_size_filter, .update_frequency_filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.memory_filter > div, .ram_filter > div, .screen_size_filter > div, .update_frequency_filter > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999999;
+  font-weight: 300;
+}
+
