@@ -5,14 +5,16 @@ import './layout.css'
 import Logo from '../assets/images/default-logo.png'
 
 import { IoSearchOutline } from "react-icons/io5";
-import { PiSignIn } from "react-icons/pi";
-import { FaHeart } from "react-icons/fa6";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { CiHeart } from "react-icons/ci";
 import { FaBarsStaggered } from "react-icons/fa6";
 
 import { IoIosPhonePortrait } from "react-icons/io";
 import { LiaTabletSolid } from "react-icons/lia";
-import { GrLanguage } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
+
+import UsaFlag from '../assets/images/usa-flag.svg'
+import GeorgianFlag from '../assets/images/georgia-flag-icon.svg'
 
 
 
@@ -90,14 +92,34 @@ const Layout = () => {
                 </div>
             </div>
             <div className='navbar_right'>
-                <div className='cart_container'>
-                    Cart
+                <Link to='/cart' className='Cart_link'>
+                    <div className='cart_container'>
+                        Cart
+                    </div>
+                </Link>
+                <div className="icon_container">
+                    <FaRegCircleUser className="signIn_icon" />
+
+                    <div className="language_icon">
+                        <img src={UsaFlag} alt="USA Flag" className='language_icon'/>
+                        <div className="change_language_dropdown">
+                            <div className='language_dropdown'>
+                                <div className='language_en'>
+                                    <img src={UsaFlag} alt="USA Flag" className='USAFlag'/>
+                                    <p>English (US)</p>
+                                </div>
+                                <div className='language_ge'>
+                                    <img src={GeorgianFlag} alt="Georgian Flag" className='GeorgianFlag'/>
+                                    <p>ქართული (GE)</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <CiHeart className="heart_icon" />
+
                 </div>
-                <div className='icon_container'>
-                    <PiSignIn className='signIn_icon'/>
-                    <FaHeart className='heart_icon'/>
-                    <GrLanguage className='language_icon'/>
-                </div>
+
             </div>
         </nav>
       </header>

@@ -56,7 +56,7 @@
 }
 
 .product_img img:hover {
-  width: 210px;
+  transform: scale(1.1);
 }
 
 .product_list_section {
@@ -89,6 +89,10 @@
     bottom: 20px;
 }
 
+.add_product:active {
+    transform: scale(0.9);
+}
+
 .product_name__add {
     display: flex;
     align-items: start;
@@ -108,8 +112,11 @@
   font-size: 12px;
 }
 
-.product__details {
+.product__details_Link {
   width: 100%;
+}
+
+.product__details {
   display: flex;
   justify-content: center;
   margin-top: 15px;

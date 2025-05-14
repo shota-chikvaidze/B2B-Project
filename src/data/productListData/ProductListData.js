@@ -27,7 +27,8 @@ const allProducts = {
         "6.1-inch OLED display",
         "Dual 48MP cameras",
         "iOS 18",
-        "MagSafe support"
+        "60Hz refresh rate",
+        "MagSafe support",
       ],
       colors: ["Black", "Blue", "Starlight"],
       releaseDate: "2024-09-22",
@@ -35,7 +36,8 @@ const allProducts = {
       dimensions: "146.7 x 71.5 x 7.8 mm",
       os: "iOS 18",
       connectivity: ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 2,
@@ -57,7 +59,9 @@ const allProducts = {
       dimensions: "146.6 x 70.6 x 7.85 mm",
       os: "iOS 18",
       connectivity: ["5G", "Wi-Fi 6E", "Bluetooth 5.3", "NFC"],
-      inStock: true
+      inStock: true,
+      inCart: false,
+
     },
     {
       id: 3,
@@ -79,7 +83,8 @@ const allProducts = {
       dimensions: "160.7 x 77.6 x 7.9 mm",
       os: "iOS 18",
       connectivity: ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 4,
@@ -101,7 +106,8 @@ const allProducts = {
       dimensions: "147.6 x 71.6 x 7.8 mm",
       os: "iOS 17",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 5,
@@ -123,7 +129,8 @@ const allProducts = {
       dimensions: "146.6 x 70.6 x 8.25 mm",
       os: "iOS 17",
       connectivity: ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 6,
@@ -145,7 +152,8 @@ const allProducts = {
       dimensions: "159.9 x 76.7 x 8.25 mm",
       os: "iOS 17",
       connectivity: ["5G", "Wi-Fi 6E", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 7,
@@ -167,7 +175,8 @@ const allProducts = {
       dimensions: "146.7 x 71.5 x 7.8 mm",
       os: "iOS 16",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.0"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 8,
@@ -189,7 +198,8 @@ const allProducts = {
       dimensions: "147.5 x 71.5 x 7.9 mm",
       os: "iOS 16",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 9,
@@ -211,7 +221,8 @@ const allProducts = {
       dimensions: "160.7 x 77.6 x 7.85 mm",
       os: "iOS 16",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.3"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 10,
@@ -233,7 +244,8 @@ const allProducts = {
       dimensions: "146.7 x 71.5 x 7.65 mm",
       os: "iOS 15",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.0"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     },
     {
       id: 11,
@@ -255,13 +267,14 @@ const allProducts = {
       dimensions: "146.7 x 71.5 x 7.65 mm",
       os: "iOS 15",
       connectivity: ["5G", "Wi-Fi 6", "Bluetooth 5.0"],
-      inStock: true
+      inStock: true,
+      inCart: false,
     }
   ],
 
   headphones: [
   {
-    id: 1,
+    id: 12,
     name: "AirPods Pro (2nd Gen)",
     price: 999,
     // image: airpodsPro2,
@@ -283,7 +296,7 @@ const allProducts = {
     inStock: true
   },
   {
-    id: 2,
+    id: 13,
     name: "AirPods Max",
     price: 2099,
     // image: airpodsMax,
@@ -305,7 +318,7 @@ const allProducts = {
     inStock: true
   },
   {
-    id: 3,
+    id: 14,
     name: "Beats Fit Pro",
     price: 899,
     // image: beatsFitPro,
@@ -327,7 +340,7 @@ const allProducts = {
     inStock: true
   },
   {
-    id: 4,
+    id: 15,
     name: "Sony WH-1000XM5",
     price: 1399,
     // image: sonyXM5,
@@ -349,7 +362,7 @@ const allProducts = {
     inStock: true
   },
   {
-    id: 5,
+    id: 16,
     name: "Samsung Galaxy Buds2 Pro",
     price: 799,
     // image: galaxyBuds2Pro,
@@ -372,7 +385,7 @@ const allProducts = {
   },
 
   {
-  id: 6,
+  id: 17,
   name: "Bose QuietComfort Ultra Headphones",
   price: 1599,
   // image: boseQCUltra,
@@ -394,7 +407,7 @@ const allProducts = {
   inStock: true
 },
 {
-  id: 7,
+  id: 18,
   name: "Sennheiser Momentum 4 Wireless",
   price: 1399,
   // image: sennMomentum4,
@@ -416,7 +429,7 @@ const allProducts = {
   inStock: true
 },
 {
-  id: 8,
+  id: 19,
   name: "Jabra Elite 10",
   price: 799,
   // image: jabraElite10,
@@ -438,7 +451,7 @@ const allProducts = {
   inStock: true
 },
 {
-  id: 9,
+  id: 20,
   name: "Anker Soundcore Liberty 4 NC",
   price: 399,
   // image: soundcoreLiberty4NC,
@@ -460,7 +473,7 @@ const allProducts = {
   inStock: true
 },
 {
-  id: 10,
+  id: 21,
   name: "Marshall Major IV",
   price: 599,
   // image: marshallMajorIV,

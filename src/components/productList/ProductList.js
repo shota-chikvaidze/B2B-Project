@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import allProducts from '../../data/productListData/ProductListData';
+import allProductsData from '../../data/productListData/ProductListData';
 
 import { IoAddOutline } from "react-icons/io5";
 
 
-const ProductCategoryPage = () => {
+const ProductList = ({ products, setProducts }) => {
 
-    const { categoryName } = useParams()
-    const category = categoryName.toLowerCase()
-    const products = allProducts[category] || []
+
+    const { categoryName } = useParams();
+    const category = categoryName.toLowerCase();
+    const categoryProducts = products[category] || [];
+
     
     const minLimit = 0;
     const maxLimit = 5200;
@@ -26,6 +28,20 @@ const ProductCategoryPage = () => {
       const value = Math.max(Number(e.target.value), minPrice + 1);
       setMaxPrice(value);
     }
+
+    const addToCart = (id) => {
+        setProducts(prev =>
+            Object.fromEntries(
+            Object.entries(prev).map(([key, items]) => [
+            key,
+            items.map(item =>
+                item.id === id ? { ...item, inCart: true } : item
+            )
+        ])
+      )
+    )
+    }
+
 
   return (
 
@@ -152,22 +168,12 @@ const ProductCategoryPage = () => {
                     <div className='update_frequency_filter'>
                         <div>
                             <input type='checkbox' id='checkboxId_1'/>
-                            <label for="checkboxId_1">6.9 inches</label>    
+                            <label for="checkboxId_1">60 HZ</label>    
                         </div>
                         
                         <div>
                             <input type='checkbox' id='checkboxId_1'/>
-                            <label for="checkboxId_1">6.7 inches</label>
-                        </div>
-                        
-                        <div>
-                            <input type='checkbox' id='checkboxId_1'/>
-                            <label for="checkboxId_1">6.3 inches</label>
-                        </div>
-
-                        <div>
-                            <input type='checkbox' id='checkboxId_1'/>
-                            <label for="checkboxId_1">6.1 inches</label>
+                            <label for="checkboxId_1">120 HZ</label>
                         </div>
 
                     </div>
@@ -176,32 +182,35 @@ const ProductCategoryPage = () => {
             </div>
             <div className='product_list_side'>
                 {
-                    products.map(product => (
+                    categoryProducts.map(product => (
                         
                         <>
-                            <Link to={`/product/${product.id}`}>
-                                <div className='product_list_card' key={product.id}>
-                                    <div className='product_img'>
+                            <div className='product_list_card' key={product.id}>
+                                <div className='product_img'>
+                                    <Link to={`/product/${product.id}`}>
                                         <img src={product.image} />
-                                        <button className='add_product'>
-                                            <IoAddOutline />
-                                        </button>
+                                    </Link>
+                                    <button className='add_product' onClick={() => addToCart(product.id)}>
+                                        <IoAddOutline />
+                                    </button>
+                                </div>
+                                <div className='product_name__add'>
+                                    <div className='product__name'>
+                                        {product.name}
                                     </div>
-                                    <div className='product_name__add'>
-                                        <div className='product__name'>
-                                            {product.name}
-                                        </div>
-                                        <div className='product__specs'>
-                                            { product.specs }
-                                        </div>
+                                    <div className='product__specs'>
+                                        { product.specs }
                                     </div>
+                                </div>
+                                <Link to={`/product/${product.id}`} className='product__details_Link'>
                                     <div className='product__details'>
                                         <button>
                                             Details
                                         </button>
                                     </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
+
                         </>
      
                     ))
@@ -215,4 +224,4 @@ const ProductCategoryPage = () => {
   );
 };
 
-export default ProductCategoryPage;
+export default ProductList;

@@ -119,6 +119,10 @@ const ProductDetails = () => {
                                 <div>{product.features[4]}</div>
                             </li>
                             <li>
+                                <div className='product_stats_Understandable_description'>HZ</div>
+                                <div>{product.features[5]}</div>
+                            </li>
+                            <li>
                                 <div className='product_stats_Understandable_description'>Release Date:</div>
                                 <div>{product.releaseDate}</div>
                             </li>

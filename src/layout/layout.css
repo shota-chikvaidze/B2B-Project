@@ -73,9 +73,59 @@ header {
     gap: 10px;
 }
 
-.signIn_icon, .heart_icon, .language_icon {
+.signIn_icon {
     font-size: 1.2rem;
     cursor: pointer;
+}
+.heart_icon {
+       font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.language_icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.USAFlag, .GeorgianFlag {
+    width: 25px;
+    height: 25px;
+}
+
+.language_icon:hover .change_language_dropdown {
+    display: block;
+}
+
+.change_language_dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    right: 0;
+    width: 200px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    border-radius: 10px;
+}
+
+.language_dropdown {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language_en, .language_ge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+
 }
 
 .all_categories_div {
@@ -152,9 +202,6 @@ header {
     gap: 5px;
 }
 
-
-/*  Top | Right | Bottom | Left  */
-
 .popup_container {
     position: relative;
 }
@@ -180,4 +227,75 @@ header {
 .brand_list li {
     font-size: 14px;
     color: #a5a5a5;
+}
+
+
+
+/* Footer */
+
+
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #26272b;
+    margin-top: 100px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.footer_compmany, .footer_get_help, .footer_online_shop, .footer_follow_us {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer_compmany h2, .footer_get_help h2, .footer_online_shop h2, .footer_follow_us h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #904431;
+    width: fit-content;
+    font-weight: 400;
+}
+
+.footer_compmany ul, .footer_get_help ul, .footer_online_shop ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer_compmany ul li, .footer_get_help ul li, .footer_online_shop ul li {
+    color: #707175;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.social_media_icons {
+    display: flex;
+    gap: 20px;
+}
+
+.facebook, .twitter, .instagram, .linkedin {
+    font-size: 1.3rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #505255;
+    color: #fff;
+    transition: all 0.3s ease-in-out; 
+    cursor: pointer;
+}
+
+.facebook:hover, .twitter:hover, .instagram:hover, .linkedin:hover {
+    background-color: #fff;
+    color: #000;
 }
