@@ -1,0 +1,115 @@
+.create_product_container {
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.create_product_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.create_product_container form {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.create_product_container form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upload_wrapper label {
+    font-weight: 600;
+}
+
+.upload_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload_files {
+    display: flex;
+    justify-content: space-between ;
+    width: 100%;    
+}
+
+.upload_label {
+    cursor: pointer;
+}
+
+.upload_box {
+    width: 95px;
+    height: 50px;
+    border: 1px dashed #ccc;
+    object-fit: cover;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.product_name input {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product_name label, .product_description label, .category label  {
+    font-weight: 600;
+}
+
+.product_description_create_product textarea {
+    width: 100% !important;
+    height: 125px !important;
+    padding: 12px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.category select {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product_price {
+    display: flex;
+    flex-direction: row !important;    
+}
+
+.product_price > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.product_price > div input {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product_add_btn button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    padding: 12px 35px;
+    color: #fff;
+    background-color: #40546d;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 10px;
+}

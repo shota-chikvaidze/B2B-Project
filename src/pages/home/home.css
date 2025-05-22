@@ -1,38 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.first_section {
-    width: 100%;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.product_div {
-    width: 250px;
-    height: 330px;
-    border: 1px solid #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.image_card {
-    width: 250px;
-    height: 200px;
-    display: flex;
-    align-items: start;
-}
-
-.image_card img {
-    object-fit: cover;
-    object-position: center;
-    width: 220px;
-}
-
 .product_list_card {
     width: 250px;
     height: 300px;
@@ -44,7 +11,6 @@
 
 .product_img {
     position: relative;
-
 }
 
 .product_img img {
@@ -239,3 +205,246 @@
   font-weight: 300;
 }
 
+.empty_product_list {
+  height: 80vh;
+}
+
+/* carousel */
+
+.slider_container {
+  width: 100%;
+  height: 550px;
+}
+
+.slider_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  
+}
+
+.slider_header {
+  display: flex;
+  justify-content: space-between;
+  width: 82%;
+  padding-bottom: 10px;
+}
+
+.slider_header h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: #323232;
+}
+
+.slider_header button {
+  background-color: #f5f5f5;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.prev_btn, .next_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  font-size: 18px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #40546d;
+  cursor: pointer;
+}
+
+.prev_btn {
+  left: 20px;
+}
+.next_btn {
+  right: 20px;
+}
+
+.slider_wrapper button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.slider_track {
+  width: 85%;
+  overflow: hidden;
+}
+
+.slider_view {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  white-space: nowrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.product_div {
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+.image_card {
+  width: 220px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product_description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.product_description h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.product_description p {
+  font-size: 14px;
+  color: #999999;
+}
+
+.product__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product__details h3 {
+  font-size: 15px;
+}
+
+.bestSellerPhones button {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.add_productHome {
+    background-color: #323232;
+    padding: 10px;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.add_productHome:active {
+    transform: scale(0.9);
+}
+
+
+
+.brands_section {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.brands_title {
+  display: flex;
+  justify-content: start;
+  width: 85%;
+  padding-bottom: 20px;
+}
+
+.brands_title h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 23px;
+  color: #323232;
+  font-weight: 400;
+}
+
+.brands_container {
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.brands_div {
+  width: 120px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.brands_image {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.brands_image img {
+  width: 80px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.brands_image img:hover {
+  transform: scale(1.1);
+}
+
+.brands_name {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #323232;
+}

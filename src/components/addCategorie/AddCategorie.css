@@ -1,0 +1,43 @@
+.addCate_section {
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.addCate_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.addCate_container > div {
+    width: 280px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add_categorie, .add_sub_categorie {
+    border: 1px solid #40546d;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.add_categorie:hover, .add_sub_categorie:hover {
+    background-color: #40546d;
+    border: 1px solid #40546d;
+    color: #fff;
+  transform: scale3d(1.05, 1.05, 1.05);
+}
+
+.add_icon {
+    font-size: 5rem;
+    font-weight: 300;
+}

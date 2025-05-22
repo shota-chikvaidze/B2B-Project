@@ -1,5 +1,5 @@
-import React, { use, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './layout.css'
 
 import Logo from '../assets/images/default-logo.png'
@@ -7,7 +7,10 @@ import Logo from '../assets/images/default-logo.png'
 import { IoSearchOutline } from "react-icons/io5";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
+import { IoCartOutline } from "react-icons/io5";
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos } from "react-icons/md";
 
 import { IoIosPhonePortrait } from "react-icons/io";
 import { LiaTabletSolid } from "react-icons/lia";
@@ -17,9 +20,7 @@ import UsaFlag from '../assets/images/usa-flag.svg'
 import GeorgianFlag from '../assets/images/georgia-flag-icon.svg'
 
 
-
-
-const Layout = () => {
+const Layout = () => {  
 
     const [popUp, setPopUp] = useState(false)
 
@@ -30,99 +31,111 @@ const Layout = () => {
         setPopUp(false)
     }
 
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    }
+    
   return (
     <>
       <header>
         <nav className='navbar'>
             <div className='navbar_left'>
-                <Link to="/" > 
-                    <img src={Logo} />
-                </Link>
-                <div className='all_categories_div' onClick={notHidden}>
-                    <FaBarsStaggered />
-                    All Categories
-                </div>
-
-                {
-                    popUp && (
-                        <>
-                            <div className='popup_ovelay'>
-                                <div className='popup_container'>
-                                    <IoMdClose onClick={hidden} className='hide_popup'/>
-                                    <ul className='categoryList'>
-                                        
-                                        <li className='list_phone'>
-                                            <IoIosPhonePortrait />
-                                            Phone
-                                            <div className='phone_side_dropdown'>
-                                                
-                                            </div>
-                                        </li>
-                                        
-                                        <li className='list_phone'>
-                                            <LiaTabletSolid />
-                                            Tablets
-                                        </li>
-                                        <li>Televisions </li>
-                                        <li>Smartwatches</li>
-                                        <li>Bluetooth Speakers</li>
-                                        <li>Digital Cameras</li>
-                                        <li>Gaming Consoles</li>
-                                        <li>Headphones </li>
-                                        <li>Drones</li>
-                                        <li>Home Assistants</li>
-                                        <li>Smart Thermostats</li>
-                                        <li>VR Headsets</li>
-                                        <li>Wearable Fitness Trackers</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
-
+                <Link to="/" className='website_logo'> 
+                    <h1><i>Electric</i></h1>
+                </Link> 
             </div>
             <div className='navbar_middle'>
                 <div className='search_wrapper'>
-                    <input type='search' placeholder='Search...'/>
+                    <input type='search'   
+                    value={searchTerm} 
+                    onChange={(e) => setSearchTerm(e.target.value)} 
+                    placeholder="Search products..."  
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleSearch();
+                        }
+                    }}/>
                 </div>
                 <div>
-                    <IoSearchOutline />
+                    <IoSearchOutline className='search_icon'/>
                 </div>
             </div>
             <div className='navbar_right'>
                 <Link to='/cart' className='Cart_link'>
                     <div className='cart_container'>
                         Cart
+                        <IoCartOutline />
                     </div>
                 </Link>
-                <div className="icon_container">
-                    <FaRegCircleUser className="signIn_icon" />
-
-                    <div className="language_icon">
-                        <img src={UsaFlag} alt="USA Flag" className='language_icon'/>
-                        <div className="change_language_dropdown">
-                            <div className='language_dropdown'>
-                                <div className='language_en'>
-                                    <img src={UsaFlag} alt="USA Flag" className='USAFlag'/>
-                                    <p>English (US)</p>
-                                </div>
-                                <div className='language_ge'>
-                                    <img src={GeorgianFlag} alt="Georgian Flag" className='GeorgianFlag'/>
-                                    <p>ქართული (GE)</p>
-                                </div>
-                                
-                            </div>
-                        </div>
+                <Link to='/signIn' className='Cart_link'>
+                    <div className='cart_container'>
+                        Log In
+                        <FaRegCircleUser />
                     </div>
-                    <CiHeart className="heart_icon" />
-
-                </div>
-
+                </Link>
+            
+            </div>
+            <div className='navbar_bars_popUp'>
+                <FaBars  className='bar_icon' onClick={notHidden} />
+                <CiHeart className="heart_icon" />
             </div>
         </nav>
       </header>
+    
+
+      {popUp && (
+        <>
+            <div className='layout_popup_overlay'>
+                <div className='layout_popup'>
+                    <div className='categorie_list'>
+                        <div className='goback_div' onClick={hidden}>
+                            <MdArrowBackIos />
+                            Go back
+                        </div>
+                        <ul>
+                            <div>
+                                <li>Mobile</li>
+                                <MdArrowForwardIos />
+                            </div>
+
+                            <div>
+                                <li>Television</li>
+                                <MdArrowForwardIos />
+                            </div>
+
+                            <div>
+                                <li>Computer</li>
+                                <MdArrowForwardIos />
+                            </div>
+
+                            <div>
+                                <li>Tablet</li>
+                                <MdArrowForwardIos />
+                            </div>
+
+                            <div>
+                                <li>Mobile</li>
+                                <MdArrowForwardIos />
+                            </div>
+
+                            <div>
+                                <li>other</li>
+                                <MdArrowForwardIos />
+                            </div>
+                        </ul>
+                    </div>
+                    <div className='add_categorie_btn'>
+                        <Link to='/add-categorie'>
+                            <button onClick={hidden}>add Categories</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </>
+      )}
     </>
   )
 }
